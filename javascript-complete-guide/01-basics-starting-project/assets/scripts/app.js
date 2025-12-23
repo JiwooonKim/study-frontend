@@ -3,15 +3,37 @@
  */
 const defaultResult = 0;
 let currentResult = defaultResult;
-let inputValue = 0;
-let caclculationDescription = '(' + defaultResult + '+10) *3';
+let caclculationDescription = 0;
 
-function addNumber(num1, num2) {
-  const result = num1 + num2;
-  return result;
+function addNumber() {
+  return currentResult = currentResult + parseInt(userInput.value);
 }
-currentResult = addNumber(1,2);
+function minusNumber() {
+  return currentResult = currentResult - parseInt(userInput.value);
+}
+function multiplyNumber() {
+  return currentResult = currentResult * parseInt(userInput.value);
+}
+function divideNumber() {
+  return currentResult = currentResult / parseInt(userInput.value);
+}
 
-addBtn.addEventListener('click', () => {
-	outputResult(currentResult, caclculationDescription)
+clacBtn.forEach(btn => {
+  btn.addEventListener('click', function(){
+    switch (this.id) {
+      case "btn-add" :
+        addNumber();
+        break;
+      case "btn-minus" :
+        minusNumber();
+        break;
+      case "btn-multiply" :
+        multiplyNumber();
+        break;
+      case "btn-divide" :
+        divideNumber();
+        break;
+    }
+    outputResult(currentResult, caclculationDescription);
+  })
 })
